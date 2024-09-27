@@ -1,6 +1,6 @@
 # raylib-nuklear-cr
 
-TODO: Write a description here
+Not usable yet, work in progress
 
 ## Installation
 
@@ -9,7 +9,7 @@ TODO: Write a description here
    ```yaml
    dependencies:
      raylib-nuklear-cr:
-       github: your-github-user/raylib-nuklear-cr
+       github: and3md/raylib-nuklear-cr
    ```
 
 2. Run `shards install`
