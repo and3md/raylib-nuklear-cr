@@ -1,0 +1,9 @@
+name: raylib-nuklear-cr
+version: 0.1.0
+
+authors:
+  - and3md <and3md@gmail.com>
+
+crystal: '>= 1.13.3'
+
+license: MIT
