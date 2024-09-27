@@ -6,4 +6,8 @@ authors:
 
 crystal: '>= 1.13.3'
 
+dependencies:
+  raylib-cr:
+    github: sol-vin/raylib-cr
+
 license: MIT
