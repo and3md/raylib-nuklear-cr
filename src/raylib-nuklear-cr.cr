@@ -173,7 +173,7 @@ lib RayNuk
 
   type NkPluginAllocCallback = (NkHandle, Void*, NkSize -> Void*)
   type NkPluginFreeCallback = (NkHandle, Void* -> Void)
-  # przeneisone dwa callbacki pod text edit
+  # 2 callbacks moved under text edit
   type NkPluginCopyCallback = (NkHandle, LibC::Char* -> Void)
 
   struct NkAllocator
