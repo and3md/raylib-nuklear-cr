@@ -534,6 +534,8 @@ lib RayNuk
     NK_TEXT_RIGHT    = NkTextAlign::NK_TEXT_ALIGN_MIDDLE | NkTextAlign::NK_TEXT_ALIGN_RIGHT
   end
 
+  fun nk_image(ctx : NkContext*, image : NkImage)
+
   # Button 3181
   fun nk_button_label? = nk_button_label(ctx : NkContext*, title : LibC::Char*) : NkBool
 
