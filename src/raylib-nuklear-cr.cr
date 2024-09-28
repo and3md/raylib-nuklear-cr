@@ -9,27 +9,27 @@ lib RayNuk
   NK_MAX_NUMBER_BUFFER        =     64
   NK_SCROLLBAR_HIDING_TIMEOUT =    4.0
 
-  type NkInt8 = LibC::Char
-  type NkUInt8 = LibC::UChar
-  type NkInt16 = LibC::Short
-  type NkUInt16 = LibC::UShort
-  type NkInt32 = LibC::Int
-  type NkUInt32 = LibC::UInt
-  type NkSizeType = LibC::SizeT
-  type NkPointerType = LibC::ULong
-  type NkBool = Bool
-  type NkChar = NkInt8
-  type NkUChar = NkUInt8
-  type NkByte = NkUInt8
-  type NkShort = NkInt16
-  type NkUShort = NkUInt16
-  type NkInt = NkInt32
-  type NkUint = NkUInt32
-  type NkSize = NkSizeType
-  type NkPtr = NkPointerType
-  type NkHash = NkUint
-  type NkFlags = NkUint
-  type NkRune = NkUint
+  alias NkInt8 = LibC::Char
+  alias NkUInt8 = LibC::UChar
+  alias NkInt16 = LibC::Short
+  alias NkUInt16 = LibC::UShort
+  alias NkInt32 = LibC::Int
+  alias NkUInt32 = LibC::UInt
+  alias NkSizeType = LibC::SizeT
+  alias NkPointerType = LibC::ULong
+  alias NkBool = Bool
+  alias NkChar = NkInt8
+  alias NkUChar = NkUInt8
+  alias NkByte = NkUInt8
+  alias NkShort = NkInt16
+  alias NkUShort = NkUInt16
+  alias NkInt = NkInt32
+  alias NkUint = NkUInt32
+  alias NkSize = NkSizeType
+  alias NkPtr = NkPointerType
+  alias NkHash = NkUint
+  alias NkFlags = NkUint
+  alias NkRune = NkUint
 
   # koło lini 475
   enum NkBoolEnum
