@@ -203,6 +203,7 @@ lib RayNuk
     NK_SYMBOL_MAX
   end
 
+  # Context - line 533
   fun nk_init_fixed(ctx : NkContext*, memory : Void*, size : NkSize, font : NkUserFont*) : NkBool
   fun nk_init(ctx : NkContext*, alloc : NkAllocator*, font : NkUserFont*) : NkBool
   fun nk_init_custom(ctx : NkContext*, cmds : NkBuffer*, pool : NkBuffer*, font : NkUserFont*) : NkBool
@@ -210,6 +211,7 @@ lib RayNuk
   fun nk_free(ctx : NkContext*)
   fun nk_set_user_data(ctx : NkContext*, handle : NkHandle)
 
+  # Input - line 693
   enum NkKeys
     NK_KEY_NONE
     NK_KEY_SHIFT
@@ -264,7 +266,7 @@ lib RayNuk
   fun nk_input_unicode(ctx : NkContext*, rune : NkRune)
   fun nk_input_end(ctx : NkContext*)
 
-  # Drawing
+  # Drawing - line 942
 
   enum NkAntiAliasing
     NK_ANTI_ALIASING_OFF
@@ -300,7 +302,8 @@ lib RayNuk
   fun nk__begin(ctx : NkContext*) : NkCommand*
   fun nk__next(ctx : NkContext*, cmd : NkCommand*)
 
-  # Window
+  # Window - line 1327
+  @[Flags]
   enum NkPanelFlags
     NK_WINDOW_BORDER           =    1
     NK_WINDOW_MOVABLE          =    2
@@ -318,7 +321,7 @@ lib RayNuk
   fun nk_begin? = nk_begin(ctx : NkContext*,
                            title : LibC::Char*,
                            bounds : NkRect,
-                           flags : NkPanelFlags) : NkBool
+                           flags : NkFlags) : NkBool
   fun nk_begin_titled? = nk_begin_titled(ctx : NkContext*,
                                          name : LibC::Char*,
                                          title : LibC::Char*,
@@ -358,7 +361,7 @@ lib RayNuk
   fun nk_window_show_if(ctx : NkContext*, name : LibC::Char*, state : NkShowStates, cond : LibC::Int)
   fun nk_rule_horizontal(ctx : NkContext*, color : NkColor, rounding : NkBool)
 
-  # Layout
+  # Layout - line 2048
   enum NkWidgetAlign
     NK_WIDGET_ALIGN_LEFT     = 0x01
     NK_WIDGET_ALIGN_CENTERED = 0x02
