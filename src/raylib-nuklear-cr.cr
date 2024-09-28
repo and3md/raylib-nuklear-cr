@@ -17,7 +17,7 @@ lib RayNuk
   type NkUInt32 = LibC::UInt
   type NkSizeType = LibC::SizeT
   type NkPointerType = LibC::ULong
-  type NkBool = LibC::Int
+  type NkBool = LibC::UChar
   type NkChar = NkInt8
   type NkUChar = NkUInt8
   type NkByte = NkUInt8
