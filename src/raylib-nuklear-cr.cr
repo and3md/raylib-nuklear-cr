@@ -1,5 +1,5 @@
 @[Link("raylib_nuklear_shared")]
-lib RaylibNuklear
+lib RayNuk
   VERSION = "0.1.0"
 
   NK_UNDEFINED                = (-1.0)
