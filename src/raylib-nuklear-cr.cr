@@ -1331,6 +1331,10 @@ lib RayNuk
     window : NkStyleWindow
   end
 
+  fun nk_style_item_color(color : NkColor) : NkStyleItem
+  fun nk_style_item_image(img : NkImage) : NkStyleItem
+  fun nk_style_item_nine_slice(slice : NkNineSlice) : NkStyleItem
+  fun nk_style_item_hide : NkStyleItem
   # Panel 5431
 
   NK_MAX_LAYOUT_ROW_TEMPLATE_COLUMNS = 16
