@@ -505,6 +505,18 @@ lib RayNuk
   end
 
   fun nk_widget(rect : NkRect*, ctx : NkContext*) : NkWidgetLayoutStates
+  fun nk_widget_fitting(rect : NkRect*, ctx : NkContext*, vec : NkVec2) : NkWidgetLayoutStates
+  fun nk_widget_bounds(ctx : NkContext*) : NkRect
+  fun nk_widget_position(ctx : NkContext*) : NkVec2
+  fun nk_widget_size(ctx : NkContext*) : NkVec2
+  fun nk_widget_width(ctx : NkContext*) : LibC::Float
+  fun nk_widget_height(ctx : NkContext*) : LibC::Float
+  fun nk_widget_is_hovered? = nk_widget_is_hovered(ctx : NkContext*) : NkBool
+  fun nk_widget_is_mouse_clicked? = nk_widget_is_mouse_clicked(ctx : NkContext*, buttons : NkButtons) : NkBool
+  fun nk_widget_is_mouse_click_down? = nk_widget_is_mouse_click_down(ctx : NkContext*, buttons : NkButtons, down : NkBool) : NkBool
+  fun nk_spacing(ctx : NkContext*, cols : LibC::Int)
+  fun nk_widget_disable_begin(ctx : NkContext*)
+  fun nk_widget_disable_end(ctx : NkContext*)
 
   # Text - 3137
   enum NkTextAlign
