@@ -362,6 +362,7 @@ lib RayNuk
   fun nk_rule_horizontal(ctx : NkContext*, color : NkColor, rounding : NkBool)
 
   # Layout - line 2048
+  @[Flags]
   enum NkWidgetAlign
     NK_WIDGET_ALIGN_LEFT     = 0x01
     NK_WIDGET_ALIGN_CENTERED = 0x02
@@ -401,7 +402,8 @@ lib RayNuk
   fun nk_layout_space_rect_to_screen(ctx : NkContext*, bounds : NkRect) : NkRect
   fun nk_layout_space_rect_to_local(ctx : NkContext*, bounds : NkRect) : NkRect
   fun nk_spacer(ctx : NkContext*)
-  # Group
+
+  # Group - line 2628
   fun nk_group_begin? = nk_group_begin(ctx : NkContext*,
                                        title : LibC::Char*,
                                        flags : NkFlags) : NkBool
@@ -422,7 +424,8 @@ lib RayNuk
   fun nk_group_scrolled_end(ctx : NkContext*)
   fun nk_group_get_scroll(ctx : NkContext*, id : LibC::Char*, x_offset : NkUint*, y_offset : NkUint*)
   fun nk_group_set_scroll(ctx : NkContext*, id : LibC::Char*, x_offset : NkUint, y_offset : NkUint)
-  # Tree
+
+  # Tree - line 2832
   fun nk_tree_push_hashed? = nk_tree_push_hashed(ctx : NkContext*,
                                                  type : NkTreeType,
                                                  title : LibC::Char*,
@@ -468,7 +471,7 @@ lib RayNuk
                                                                              seed : LibC::Int) : NkBool
   fun nl_tree_element_pop(ctx : NkContext*)
 
-  # List View
+  # List View - line 3087
   struct NkListView
     begin_field : LibC::Int
     end_field : LibC::Int
@@ -487,8 +490,9 @@ lib RayNuk
                                                row_count : LibC::Int) : NkBool
   fun nk_list_view_end(list : NkListView*)
 
-  # Widget - 3108
+  # Widget - line 3103
 
+  @[Flags]
   enum NkWidgetLayoutStates
     NK_WIDGET_INVALID  # The widget cannot be seen and is completely out of view
     NK_WIDGET_VALID    # The widget is completely inside the window and can be updated and drawn
@@ -521,7 +525,7 @@ lib RayNuk
   fun nk_widget_disable_begin(ctx : NkContext*)
   fun nk_widget_disable_end(ctx : NkContext*)
 
-  # Text - 3137
+  # Text - line 3137
   enum NkTextAlign
     NK_TEXT_ALIGN_LEFT     = 0x01
     NK_TEXT_ALIGN_CENTERED = 0x02
