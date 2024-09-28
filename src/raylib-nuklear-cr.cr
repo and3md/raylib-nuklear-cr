@@ -315,8 +315,15 @@ lib RayNuk
     NK_WINDOW_NO_INPUT         = 1024
   end
 
-  fun nk_begin(ctx : NkContext*, title : LibC::Char*, bounds : NkRect, flags : NkPanelFlags) : NkBool
-  fun nk_begin_titled(ctx : NkContext*, name : LibC::Char*, title : LibC::Char*, bounds : NkRect, flags : NkFlags) : NkBool
+  fun nk_begin? = nk_begin(ctx : NkContext*,
+                           title : LibC::Char*,
+                           bounds : NkRect,
+                           flags : NkPanelFlags) : NkBool
+  fun nk_begin_titled? = nk_begin_titled(ctx : NkContext*,
+                                         name : LibC::Char*,
+                                         title : LibC::Char*,
+                                         bounds : NkRect,
+                                         flags : NkFlags) : NkBool
   fun nk_end(ctx : NkContext*)
   fun nk_window_find(ctx : NkContext*, name : LibC::Char*) : NkWindow
   fun nk_window_get_bounds(ctx : NkContext*) : NkRect
@@ -331,14 +338,14 @@ lib RayNuk
   fun nk_window_get_content_region_size(ctx : NkContext*) : NkVec2
   fun nk_window_get_canvas(ctx : NkContext*) : NkCommandBuffer*
   fun nk_window_get_scroll(ctx : NkContext*, offset_x : NkUint*, offset_y : NkUint*) : Void
-  fun nk_window_has_focus(ctx : NkContext*) : NkBool
-  fun nk_window_is_hovered(ctx : NkContext*) : NkBool
-  fun nk_window_is_collapsed(ctx : NkContext*, name : LibC::Char*) : NkBool
-  fun nk_window_is_closed(ctx : NkContext*, name : LibC::Char*) : NkBool
-  fun nk_window_is_hidden(ctx : NkContext*, name : LibC::Char*) : NkBool
-  fun nk_window_is_active(ctx : NkContext*, name : LibC::Char*) : NkBool
-  fun nk_window_is_any_hovered(ctx : NkContext*) : NkBool
-  fun nk_item_is_any_active(ctx : NkContext*) : NkBool
+  fun nk_window_has_focus? = nk_window_has_focus(ctx : NkContext*) : NkBool
+  fun nk_window_is_hovered? = nk_window_is_hovered(ctx : NkContext*) : NkBool
+  fun nk_window_is_collapsed? = nk_window_is_collapsed(ctx : NkContext*, name : LibC::Char*) : NkBool
+  fun nk_window_is_closed? = nk_window_is_closed(ctx : NkContext*, name : LibC::Char*) : NkBool
+  fun nk_window_is_hidden? = nk_window_is_hidden(ctx : NkContext*, name : LibC::Char*) : NkBool
+  fun nk_window_is_active? = nk_window_is_active(ctx : NkContext*, name : LibC::Char*) : NkBool
+  fun nk_window_is_any_hovered? = nk_window_is_any_hovered(ctx : NkContext*) : NkBool
+  fun nk_item_is_any_active? = nk_item_is_any_active(ctx : NkContext*) : NkBool
   fun nk_window_set_bounds(ctx : NkContext*, name : LibC::Char*, bounds : NkRect)
   fun nk_window_set_position(ctx : NkContext*, name : LibC::Char*, pos : NkVec2)
   fun nk_window_set_size(ctx : NkContext*, name : LibC::Char*, size : NkVec2)
@@ -392,23 +399,70 @@ lib RayNuk
   fun nk_layout_space_rect_to_local(ctx : NkContext*, bounds : NkRect) : NkRect
   fun nk_spacer(ctx : NkContext*)
   # Group
-  fun nk_group_begin(ctx : NkContext*, title : LibC::Char*, flags : NkFlags) : NkBool
-  fun nk_group_begin_titled(ctx : NkContext*, name : LibC::Char*, title : LibC::Char*, flags : NkFlags) : NkBool
+  fun nk_group_begin? = nk_group_begin(ctx : NkContext*,
+                                       title : LibC::Char*,
+                                       flags : NkFlags) : NkBool
+  fun nk_group_begin_titled? = nk_group_begin_titled(ctx : NkContext*,
+                                                     name : LibC::Char*,
+                                                     title : LibC::Char*,
+                                                     flags : NkFlags) : NkBool
   fun nk_group_end(ctx : NkContext*)
-  fun nk_group_scrolled_offset_begin(ctx : NkContext*, x_offset : NkUint*, y_offset : NkUint*, title : LibC::Char*, flags : NkFlags) : NkBool
-  fun nk_group_scrolled_begin(ctx : NkContext*, off : NkScroll*, title : LibC::Char*, flags : NkFlags) : NkBool
+  fun nk_group_scrolled_offset_begin? = nk_group_scrolled_offset_begin(ctx : NkContext*,
+                                                                       x_offset : NkUint*,
+                                                                       y_offset : NkUint*,
+                                                                       title : LibC::Char*,
+                                                                       flags : NkFlags) : NkBool
+  fun nk_group_scrolled_begin? = nk_group_scrolled_begin(ctx : NkContext*,
+                                                         off : NkScroll*,
+                                                         title : LibC::Char*,
+                                                         flags : NkFlags) : NkBool
   fun nk_group_scrolled_end(ctx : NkContext*)
   fun nk_group_get_scroll(ctx : NkContext*, id : LibC::Char*, x_offset : NkUint*, y_offset : NkUint*)
   fun nk_group_set_scroll(ctx : NkContext*, id : LibC::Char*, x_offset : NkUint, y_offset : NkUint)
   # Tree
-  fun nk_tree_push_hashed(ctx : NkContext*, type : NkTreeType, title : LibC::Char*, initial_state : NkCollapseStates, hash : LibC::Char*, len : LibC::Int, seed : LibC::Int) : NkBool
-  fun nk_tree_image_push_hashed(ctx : NkContext*, type : NkTreeType, img : NkImage, title : LibC::Char*, initial_state : NkCollapseStates, hash : LibC::Char*, len : LibC::Int, seed : LibC::Int) : NkBool
+  fun nk_tree_push_hashed? = nk_tree_push_hashed(ctx : NkContext*,
+                                                 type : NkTreeType,
+                                                 title : LibC::Char*,
+                                                 initial_state : NkCollapseStates,
+                                                 hash : LibC::Char*,
+                                                 len : LibC::Int,
+                                                 seed : LibC::Int) : NkBool
+  fun nk_tree_image_push_hashed? = nk_tree_image_push_hashed(ctx : NkContext*,
+                                                             type : NkTreeType,
+                                                             img : NkImage,
+                                                             title : LibC::Char*,
+                                                             initial_state : NkCollapseStates,
+                                                             hash : LibC::Char*,
+                                                             len : LibC::Int,
+                                                             seed : LibC::Int) : NkBool
   fun nk_tree_pop(ctx : NkContext*)
-  fun nk_tree_state_push(ctx : NkContext*, type : NkTreeType, title : LibC::Char*, state : NkCollapseStates*) : NkBool
-  fun nk_tree_state_image_push(ctx : NkContext*, type : NkTreeType, title : LibC::Char*, image : NkImage, state : NkCollapseStates*) : NkBool
+  fun nk_tree_state_push? = nk_tree_state_push(ctx : NkContext*,
+                                               type : NkTreeType,
+                                               title : LibC::Char*,
+                                               state : NkCollapseStates*) : NkBool
+  fun nk_tree_state_image_push? = nk_tree_state_image_push(ctx : NkContext*,
+                                                           type : NkTreeType,
+                                                           title : LibC::Char*,
+                                                           image : NkImage,
+                                                           state : NkCollapseStates*) : NkBool
   fun nk_tree_state_pop(ctx : NkContext*)
-  fun nk_tree_element_push_hashed(ctx : NkContext*, type : NkTreeType, title : LibC::Char*, initial_state : NkCollapseStates, selected : NkBool*, hash : LibC::Char*, len : LibC::Int, seed : LibC::Int) : NkBool
-  fun nk_tree_element_image_push_hashed(ctx : NkContext*, type : NkTreeType, image : NkImage, title : LibC::Char*, initial_state : NkCollapseStates, selected : NkBool*, hash : LibC::Char*, len : LibC::Int, seed : LibC::Int) : NkBool
+  fun nk_tree_element_push_hashed? = nk_tree_element_push_hashed(ctx : NkContext*,
+                                                                 type : NkTreeType,
+                                                                 title : LibC::Char*,
+                                                                 initial_state : NkCollapseStates,
+                                                                 selected : NkBool*,
+                                                                 hash : LibC::Char*,
+                                                                 len : LibC::Int,
+                                                                 seed : LibC::Int) : NkBool
+  fun nk_tree_element_image_push_hashed? = nk_tree_element_image_push_hashed(ctx : NkContext*,
+                                                                             type : NkTreeType,
+                                                                             image : NkImage,
+                                                                             title : LibC::Char*,
+                                                                             initial_state : NkCollapseStates,
+                                                                             selected : NkBool*,
+                                                                             hash : LibC::Char*,
+                                                                             len : LibC::Int,
+                                                                             seed : LibC::Int) : NkBool
   fun nl_tree_element_pop(ctx : NkContext*)
 
   # List View
@@ -422,7 +476,12 @@ lib RayNuk
     scroll_value : NkUint
   end
 
-  fun nk_list_view_begin(ctx : NkContext*, out_arg : NkListView*, id : LibC::Char*, flags : NkFlags, row_height : LibC::Int, row_count : LibC::Int) : NkBool
+  fun nk_list_view_begin? = nk_list_view_begin(ctx : NkContext*,
+                                               out_arg : NkListView*,
+                                               id : LibC::Char*,
+                                               flags : NkFlags,
+                                               row_height : LibC::Int,
+                                               row_count : LibC::Int) : NkBool
   fun nk_list_view_end(list : NkListView*)
 
   # Widget - 3108
@@ -462,6 +521,9 @@ lib RayNuk
     NK_TEXT_CENTERED = NkTextAlign::NK_TEXT_ALIGN_MIDDLE | NkTextAlign::NK_TEXT_ALIGN_CENTERED
     NK_TEXT_RIGHT    = NkTextAlign::NK_TEXT_ALIGN_MIDDLE | NkTextAlign::NK_TEXT_ALIGN_RIGHT
   end
+
+  # Button 3181
+  fun nk_button_label? = nk_button_label(ctx : NkContext*, title : LibC::Char*) : NkBool
 
   # Text Edit
   enum NkEditFlags
