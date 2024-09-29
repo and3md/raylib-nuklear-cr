@@ -610,6 +610,20 @@ lib RayNuk
                                                          value : LibC::UInt) : NkBool
   fun nk_checkbox_flags_text? = nk_checkbox_flags_text(ctx : NkContext*, text : LibC::Char*, len : LibC::Int,
                                                        flags : LibC::UInt*, value : LibC::UInt) : NkBool
+  # Radio button - line 3223
+  fun nk_radio_label? = nk_radio_label(ctx : NkContext*, label : LibC::Char*, active : NkBool*) : NkBool
+  fun nk_radio_label_align? = nk_radio_label_align(ctx : NkContext*, label : LibC::Char*, active : NkBool*,
+                                                   widget_alignment : NkFlags, text_alignment : NkFlags) : NkBool
+  fun nk_radio_text? = nk_radio_text(ctx : NkContext*, text : LibC::Char*, len : LibC::Int, active : NkBool*) : NkBool
+  fun nk_radio_text_align? = nk_radio_text_align(ctx : NkContext*, text : LibC::Char*, len : LibC::Int, active : NkBool*,
+                                                 widget_alignment : NkFlags, text_alignment : NkFlags) : NkBool
+
+  fun nk_option_label? = nk_option_label(ctx : NkContext*, label : LibC::Char*, active : NkBool) : NkBool
+  fun nk_option_label_align? = nk_option_label_align(ctx : NkContext*, label : LibC::Char*, active : NkBool,
+                                                     widget_alignment : NkFlags, text_alignment : NkFlags) : NkBool
+  fun nk_option_text? = nk_option_text(ctx : NkContext*, text : LibC::Char*, len : LibC::Int, active : NkBool) : NkBool
+  fun nk_option_text_align? = nk_option_text_align(ctx : NkContext*, text : LibC::Char*, len : LibC::Int, is_active : NkBool,
+                                                   widget_alignment : NkFlags, text_alignment : NkFlags) : NkBool
 
   # Text Edit
   enum NkEditFlags
