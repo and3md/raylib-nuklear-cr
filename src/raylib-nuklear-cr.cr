@@ -171,10 +171,10 @@ lib RayNuk
     NK_TREE_TAB
   end
 
-  type NkPluginAllocCallback = (NkHandle, Void*, NkSize -> Void*)
-  type NkPluginFreeCallback = (NkHandle, Void* -> Void)
+  alias NkPluginAllocCallback = (NkHandle, Void*, NkSize -> Void*)
+  alias NkPluginFreeCallback = (NkHandle, Void* -> Void)
   # 2 callbacks moved under text edit
-  type NkPluginCopyCallback = (NkHandle, LibC::Char* -> Void)
+  alias NkPluginCopyCallback = (NkHandle, LibC::Char* -> Void)
 
   struct NkAllocator
     userdata : NkHandle
@@ -770,8 +770,8 @@ lib RayNuk
   end
 
   # 4011
-  type NkTextWidthFCallback = (NkHandle, LibC::Float, LibC::Char*, LibC::Int -> LibC::Float)
-  type NkQueryFontGlyphFCallback = (NkHandle, LibC::Float, NkUserFontGlyth*, NkRune, NkRune -> Void)
+  alias NkTextWidthFCallback = (NkHandle, LibC::Float, LibC::Char*, LibC::Int -> LibC::Float)
+  alias NkQueryFontGlyphFCallback = (NkHandle, LibC::Float, NkUserFontGlyth*, NkRune, NkRune -> Void)
 
   # 4029
   struct NkUserFont
@@ -894,8 +894,8 @@ lib RayNuk
     undo : NkTextUndoState
   end
 
-  type NkPluginFilterCallback = (NkTextEdit*, NkRune -> NkBool)
-  type NkPluginPasteCallback = (NkHandle, NkTextEdit* -> Void)
+  alias NkPluginFilterCallback = (NkTextEdit*, NkRune -> NkBool)
+  alias NkPluginPasteCallback = (NkHandle, NkTextEdit* -> Void)
 
   # Command 4494
 
