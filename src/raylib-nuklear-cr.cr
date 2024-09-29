@@ -671,6 +671,14 @@ lib RayNuk
   fun nk_color_picker(ctx : NkContext*, color : NkColorF, fmt : NkColorFormat) : NkColorF
   fun nk_color_pick? = nk_color_pick(ctx : NkContext*, color : NkColorF*, fmt : NkColorFormat) : NkBool
 
+  # Properties - line 3288
+  fun nk_property_int(ctx : NkContext*, name : LibC::Char*, min : LibC::Int, val : LibC::Int*, max : LibC::Int, step : LibC::Int, inc_per_pixel : LibC::Float)
+  fun nk_property_float(ctx : NkContext*, name : LibC::Char*, min : LibC::Float, val : LibC::Float*, max : LibC::Float, step : LibC::Float, inc_per_pixel : LibC::Float)
+  fun nk_property_double(ctx : NkContext*, name : LibC::Char*, min : LibC::Double, val : LibC::Double*, max : LibC::Double, step : LibC::Double, inc_per_pixel : LibC::Float)
+  fun nk_propertyi(ctx : NkContext*, name : LibC::Char*, min : LibC::Int, val : LibC::Int, max : LibC::Int, step : LibC::Int, inc_per_pixel : LibC::Float)
+  fun nk_propertyf(ctx : NkContext*, name : LibC::Char*, min : LibC::Float, val : LibC::Float, max : LibC::Float, step : LibC::Float, inc_per_pixel : LibC::Float)
+  fun nk_propertyd(ctx : NkContext*, name : LibC::Char*, min : LibC::Double, val : LibC::Double, max : LibC::Double, step : LibC::Double, inc_per_pixel : LibC::Float)
+
   # Text Edit
   enum NkEditFlags
     NK_EDIT_DEFAULT              =    0
