@@ -653,6 +653,12 @@ lib RayNuk
   fun nk_slider_float? = nk_slider_float(ctx : NkContext*, min : LibC::Float, val : LibC::Float*, max : LibC::Float, step : LibC::Float) : NkBool
   fun nk_slider_int? = nk_slider_int(ctx : NkContext*, min : LibC::Int, val : LibC::Int*, max : LibC::Int, step : LibC::Int) : NkBool
 
+  # Knob - line 3265
+  fun nk_knob_float? = nk_knob_float(ctx : NkContext*, min : LibC::Float, val : LibC::Float*,
+                                     max : LibC::Float, step : LibC::Float, zero_direction : NkHeading, dead_zone_degrees : LibC::Float) : NkBool
+  fun nk_knob_int? = nk_knob_int(ctx : NkContext*, min : LibC::Int, val : LibC::Int*,
+                                 max : LibC::Int, step : LibC::Int, zero_direction : NkHeading, dead_zone_degrees : LibC::Float) : NkBool
+
   # Text Edit
   enum NkEditFlags
     NK_EDIT_DEFAULT              =    0
