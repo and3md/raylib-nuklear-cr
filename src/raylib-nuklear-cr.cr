@@ -642,9 +642,10 @@ lib RayNuk
   fun nk_select_image_text? = nk_select_image_text(ctx : NkContext*, img : NkImage, text : LibC::Char*, len : LibC::Int,
                                                    align : NkFlags, value : NkBool) : NkBool
 
-  fun nk_select_symbol_label? = nk_select_symbol_label(ctx : NkContext*, symbol : NkSymbolType, label : LibC::Char*, align : NkFlags, value : NkBool) : NkBool
-  fun nk_select_symbol_text? = nk_select_symbol_text(ctx : NkContext*, symbol : NkSymbolType, text : LibC::Char*, len : LibC::Int,
-                                                     align : NkFlags, value : NkBool) : NkBool
+  fun nk_select_symbol_label? = nk_select_symbol_label(ctx : NkContext*, symbol : NkSymbolType, label : LibC::Char*,
+                                                       align : NkFlags, value : NkBool) : NkBool
+  fun nk_select_symbol_text? = nk_select_symbol_text(ctx : NkContext*, symbol : NkSymbolType, text : LibC::Char*,
+                                                     len : LibC::Int, align : NkFlags, value : NkBool) : NkBool
 
   # Text Edit
   enum NkEditFlags
