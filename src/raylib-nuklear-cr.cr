@@ -667,6 +667,10 @@ lib RayNuk
   fun nk_progress? = nk_progress(ctx : NkContext*, cur : NkSize*, max : NkSize, modifyable : NkBool) : NkBool
   fun nk_prog(ctx : NkContext*, cur : NkSize, max : NkSize, modifyable : NkBool) : NkSize
 
+  # Color Picker - line 3281
+  fun nk_color_picker(ctx : NkContext*, color : NkColorF, fmt : NkColorFormat) : NkColorF
+  fun nk_color_pick? = nk_color_pick(ctx : NkContext*, color : NkColorF*, fmt : NkColorFormat) : NkBool
+
   # Text Edit
   enum NkEditFlags
     NK_EDIT_DEFAULT              =    0
