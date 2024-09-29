@@ -541,7 +541,16 @@ lib RayNuk
     NK_TEXT_RIGHT    = NkTextAlign::NK_TEXT_ALIGN_MIDDLE | NkTextAlign::NK_TEXT_ALIGN_RIGHT
   end
 
+  fun nk_text(ctx : NkContext*, str : LibC::Char*, len : LibC::Int, alignment : NkFlags)
+  fun nk_text_colored(ctx : NkContext*, str : LibC::Char*, len : LibC::Int, alignment : NkFlags, color : NkColor)
+  fun nk_text_wrap(ctx : NkContext*, text : LibC::Char*, len : LibC::Int)
+  fun nk_text_wrap_colored(ctx : NkContext*, text : LibC::Char*, len : LibC::Int, color : NkColor)
+  fun nk_label(ctx : NkContext*, text : LibC::Char*, alignment : NkFlags)
+  fun nk_label_colored(ctx : NkContext*, text : LibC::Char*, alignment : NkFlags, color : NkColor)
+  fun nk_label_wrap(ctx : NkContext*, text : LibC::Char*)
+  fun nk_label_colored_wrap(ctx : NkContext*, text : LibC::Char*, color : NkColor)
   fun nk_image(ctx : NkContext*, image : NkImage)
+  fun nk_image_color(ctx : NkContext*, image : NkImage, color : NkColor)
 
   # Button 3181
   fun nk_button_label? = nk_button_label(ctx : NkContext*, title : LibC::Char*) : NkBool
