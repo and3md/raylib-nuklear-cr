@@ -552,8 +552,43 @@ lib RayNuk
   fun nk_image(ctx : NkContext*, image : NkImage)
   fun nk_image_color(ctx : NkContext*, image : NkImage, color : NkColor)
 
-  # Button 3181
+  # Button - line 3182
+  fun nk_button_text? = nk_button_text(ctx : NkContext*, title : LibC::Char*, len : LibC::Int) : NkBool
   fun nk_button_label? = nk_button_label(ctx : NkContext*, title : LibC::Char*) : NkBool
+  fun nk_button_color? = nk_button_color(ctx : NkContext*, color : NkColor) : NkBool
+  fun nk_button_symbol? = nk_button_symbol(ctx : NkContext*, symbol : NkSymbolType) : NkBool
+  fun nk_button_image? = nk_button_image(ctx : NkContext*, img : NkImage) : NkBool
+  fun nk_button_symbol_label? = nk_button_symbol_label(ctx : NkContext*, symbol : NkSymbolType,
+                                                       text : LibC::Char*, alignment : NkFlags) : NkBool
+  fun nk_button_symbol_text? = nk_button_symbol_text(ctx : NkContext*, symbol : NkSymbolType,
+                                                     text : LibC::Char*, len : LibC::Int, alignment : NkFlags) : NkBool
+  fun nk_button_image_label? = nk_button_image_label(ctx : NkContext*, image : NkImage,
+                                                     text : LibC::Char*, text_alignment : NkFlags) : NkBool
+  fun nk_button_image_text? = nk_button_image_text(ctx : NkContext*, image : NkImage,
+                                                   text : LibC::Char*, len : LibC::Int, alignment : NkFlags) : NkBool
+  fun nk_button_text_styled? = nk_button_text_styled(ctx : NkContext*, style : NkStyleButton*,
+                                                     title : LibC::Char*, len : LibC::Int) : NkBool
+  fun nk_button_label_styled? = nk_button_label_styled(ctx : NkContext*, style : NkStyleButton*,
+                                                       title : LibC::Char*) : NkBool
+  fun nk_button_symbol_styled? = nk_button_symbol_styled(ctx : NkContext*, style : NkStyleButton*,
+                                                         symbol : NkSymbolType) : NkBool
+  fun nk_button_image_styled? = nk_button_image_styled(ctx : NkContext*, style : NkStyleButton*,
+                                                       img : NkImage) : NkBool
+  fun nk_button_symbol_text_styled? = nk_button_symbol_text_styled(ctx : NkContext*, style : NkStyleButton*,
+                                                                   symbol : NkSymbolType, title : LibC::Char*,
+                                                                   len : LibC::Int, alignment : NkFlags) : NkBool
+  fun nk_button_symbol_label_styled? = nk_button_symbol_label_styled(ctx : NkContext*, style : NkStyleButton*,
+                                                                     symbol : NkSymbolType, title : LibC::Char*,
+                                                                     alignment : NkFlags) : NkBool
+  fun nk_button_image_label_styled? = nk_button_image_label_styled(ctx : NkContext*, style : NkStyleButton*,
+                                                                   img : NkImage, title : LibC::Char*,
+                                                                   alignment : NkFlags) : NkBool
+  fun nk_button_image_text_styled? = nk_button_image_text_styled(ctx : NkContext*, style : NkStyleButton*,
+                                                                 img : NkImage, title : LibC::Char*, len : LibC::Int,
+                                                                 alignment : NkFlags) : NkBool
+  fun nk_button_set_behavior(ctx : NkContext*, behavior : NkButtonBehavior)
+  fun nk_button_push_behavior? = nk_button_push_behavior(ctx : NkContext*, behavior : NkButtonBehavior) : NkBool
+  fun nk_button_pop_behavior? = nk_button_pop_behavior(ctx : NkContext*) : NkBool
 
   # Text Edit
   enum NkEditFlags
