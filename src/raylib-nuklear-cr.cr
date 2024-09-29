@@ -679,7 +679,7 @@ lib RayNuk
   fun nk_propertyf(ctx : NkContext*, name : LibC::Char*, min : LibC::Float, val : LibC::Float, max : LibC::Float, step : LibC::Float, inc_per_pixel : LibC::Float)
   fun nk_propertyd(ctx : NkContext*, name : LibC::Char*, min : LibC::Double, val : LibC::Double, max : LibC::Double, step : LibC::Double, inc_per_pixel : LibC::Float)
 
-  # Text Edit
+  # Text Edit - line 3496
   enum NkEditFlags
     NK_EDIT_DEFAULT              =    0
     NK_EDIT_READ_ONLY            =    1
@@ -710,6 +710,12 @@ lib RayNuk
     NK_EDIT_DEACTIVATED =  8 #  edit widget went from state active to state inactive
     NK_EDIT_COMMITED    = 16 #  edit widget has received an enter and lost focus
   end
+
+  fun nk_edit_string(ctx : NkContext*, flags : NkFlags, buffer : LibC::Char*, len : LibC::Int*, max : LibC::Int, filter : NkPluginFilterCallback) : NkFlags
+  fun nk_edit_string_zero_terminated(ctx : NkContext*, flags : NkFlags, buffer : LibC::Char*, max : LibC::Int, filter : NkPluginFilterCallback) : NkFlags
+  fun nk_edit_buffer(ctx : NkContext*, flags : NkFlags, edit : NkTextEdit*, filter : NkPluginFilterCallback) : NkFlags
+  fun nk_edit_focus(ctx : NkContext*, flags : NkFlags)
+  fun nk_edit_unfocus(ctx : NkContext*)
 
   # Style 3642
   NK_WIDGET_DISABLED_FACTOR = 0.5
