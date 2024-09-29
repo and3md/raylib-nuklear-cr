@@ -590,6 +590,27 @@ lib RayNuk
   fun nk_button_push_behavior? = nk_button_push_behavior(ctx : NkContext*, behavior : NkButtonBehavior) : NkBool
   fun nk_button_pop_behavior? = nk_button_pop_behavior(ctx : NkContext*) : NkBool
 
+  # Checkbox - line 3207
+  fun nk_check_label? = nk_check_label(ctx : NkContext*, label : LibC::Char*, active : NkBool) : NkBool
+  fun nk_check_text? = nk_check_text(ctx : NkContext*, text : LibC::Char*, len : LibC::Int, active : NkBool) : NkBool
+  fun nk_check_text_align? = nk_check_text_align(ctx : NkContext*, text : LibC::Char*, len : LibC::Int,
+                                                 active : NkBool, widget_alignment : NkFlags, text_alignment : NkFlags) : NkBool
+  fun nk_check_flags_label(ctx : NkContext*, label : LibC::Char*, flags : LibC::UInt, value : LibC::UInt) : LibC::UInt
+  fun nk_check_flags_text(ctx : NkContext*, text : LibC::Char*, len : LibC::Int, flags : LibC::UInt,
+                          value : LibC::UInt) : LibC::UInt
+  fun nk_checkbox_label? = nk_checkbox_label(ctx : NkContext*, label : LibC::Char*, active : NkBool*) : NkBool
+  fun nk_checkbox_label_align? = nk_checkbox_label_align(ctx : NkContext*, label : LibC::Char*,
+                                                         active : NkBool*, widget_alignment : NkFlags,
+                                                         text_alignment : NkFlags) : NkBool
+  fun nk_checkbox_text? = nk_checkbox_text(ctx : NkContext*, text : LibC::Char*, len : LibC::Int, active : NkBool*) : NkBool
+  fun nk_checkbox_text_align? = nk_checkbox_text_align(ctx : NkContext*, text : LibC::Char*, len : LibC::Int,
+                                                       active : NkBool*, widget_alignment : NkFlags,
+                                                       text_alignment : NkFlags) : NkBool
+  fun nk_checkbox_flags_label? = nk_checkbox_flags_label(ctx : NkContext*, label : LibC::Char*, flags : LibC::UInt*,
+                                                         value : LibC::UInt) : NkBool
+  fun nk_checkbox_flags_text? = nk_checkbox_flags_text(ctx : NkContext*, text : LibC::Char*, len : LibC::Int,
+                                                       flags : LibC::UInt*, value : LibC::UInt) : NkBool
+
   # Text Edit
   enum NkEditFlags
     NK_EDIT_DEFAULT              =    0
