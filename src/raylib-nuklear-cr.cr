@@ -1791,7 +1791,7 @@ lib RayNuk
 
   # Wybrać największe
   # NK_VALUE_PAGE_CAPACITY = (sizeof(NkPanel) / sizeof(NkUint)) / 2
-
+  
   struct NkTable
     seq : LibC::UInt
     size : LibC::UInt
@@ -1842,7 +1842,6 @@ lib RayNuk
     delta_time_seconds : LibC::Float
     # private: should only be accessed if you know what you are doing
     userdata : NkHandle
-
     # text editor objects are quite big because of an internal
     # undo/redo stack. Therefore it does not make sense to have one for
     # each window for temporary use cases, so I only provide *one* instance
@@ -1902,7 +1901,6 @@ lib RayNuk
   fun set_nuklear_scaling(ctx : NkContext, scaling : LibC::Float)
   # Retrieves the scaling of the given Nuklear context
   fun get_nuklear_scaling = GetNuklearScaling(ctx : NkContext*) : LibC::Float
-
   # Internal Nuklear functions
   # NK_API float nk_raylib_font_get_text_width(nk_handle handle, float height, const char *text, int len);
   # NK_API float nk_raylib_font_get_text_width_user_font(nk_handle handle, float height, const char *text, int len);
@@ -1913,5 +1911,4 @@ lib RayNuk
   # NK_API struct nk_context* InitNuklearContext(struct nk_user_font* userFont);
   # NK_API void nk_raylib_input_keyboard(struct nk_context * ctx);
   # NK_API void nk_raylib_input_mouse(struct nk_context * ctx);
-
 end
