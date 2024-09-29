@@ -647,6 +647,12 @@ lib RayNuk
   fun nk_select_symbol_text? = nk_select_symbol_text(ctx : NkContext*, symbol : NkSymbolType, text : LibC::Char*,
                                                      len : LibC::Int, align : NkFlags, value : NkBool) : NkBool
 
+  # Slider - line 3255
+  fun nk_slide_float(ctx : NkContext*, min : LibC::Float, val : LibC::Float, max : LibC::Float, step : LibC::Float) : LibC::Float
+  fun nk_slide_int(ctx : NkContext*, min : LibC::Int, val : LibC::Int, max : LibC::Int, step : LibC::Int) : LibC::Int
+  fun nk_slider_float? = nk_slider_float(ctx : NkContext*, min : LibC::Float, val : LibC::Float*, max : LibC::Float, step : LibC::Float) : NkBool
+  fun nk_slider_int? = nk_slider_int(ctx : NkContext*, min : LibC::Int, val : LibC::Int*, max : LibC::Int, step : LibC::Int) : NkBool
+
   # Text Edit
   enum NkEditFlags
     NK_EDIT_DEFAULT              =    0
