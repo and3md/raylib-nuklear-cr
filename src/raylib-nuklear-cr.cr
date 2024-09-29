@@ -663,6 +663,10 @@ lib RayNuk
   fun nk_knob_int? = nk_knob_int(ctx : NkContext*, min : LibC::Int, val : LibC::Int*,
                                  max : LibC::Int, step : LibC::Int, zero_direction : NkHeading, dead_zone_degrees : LibC::Float) : NkBool
 
+  # Progressbar - line 3273
+  fun nk_progress? = nk_progress(ctx : NkContext*, cur : NkSize*, max : NkSize, modifyable : NkBool) : NkBool
+  fun nk_prog(ctx : NkContext*, cur : NkSize, max : NkSize, modifyable : NkBool) : NkSize
+
   # Text Edit
   enum NkEditFlags
     NK_EDIT_DEFAULT              =    0
