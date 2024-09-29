@@ -625,6 +625,27 @@ lib RayNuk
   fun nk_option_text_align? = nk_option_text_align(ctx : NkContext*, text : LibC::Char*, len : LibC::Int, is_active : NkBool,
                                                    widget_alignment : NkFlags, text_alignment : NkFlags) : NkBool
 
+  # Selectable - line 3236
+  fun nk_selectable_label? = nk_selectable_label(ctx : NkContext*, label : LibC::Char*, align : NkFlags, value : NkBool*) : NkBool
+  fun nk_selectable_text? = nk_selectable_text(ctx : NkContext*, text : LibC::Char*, len : LibC::Int,
+                                               align : NkFlags, value : NkBool*) : NkBool
+  fun nk_selectable_image_label? = nk_selectable_image_label(ctx : NkContext*, img : NkImage, label : LibC::Char*,
+                                                             align : NkFlags, value : NkBool*) : NkBool
+  fun nk_selectable_image_text? = nk_selectable_image_text(ctx : NkContext*, img : NkImage, text : LibC::Char*, len : LibC::Int,
+                                                           align : NkFlags, value : NkBool*) : NkBool
+
+  fun nk_select_label? = nk_select_label(ctx : NkContext*, label : LibC::Char*, align : NkFlags, value : NkBool) : NkBool
+  fun nk_select_text? = nk_select_text(ctx : NkContext*, text : LibC::Char*, len : LibC::Int,
+                                       align : NkFlags, value : NkBool) : NkBool
+  fun nk_select_image_label? = nk_select_image_label(ctx : NkContext*, img : NkImage, label : LibC::Char*,
+                                                     align : NkFlags, value : NkBool) : NkBool
+  fun nk_select_image_text? = nk_select_image_text(ctx : NkContext*, img : NkImage, text : LibC::Char*, len : LibC::Int,
+                                                   align : NkFlags, value : NkBool) : NkBool
+
+  fun nk_select_symbol_label? = nk_select_symbol_label(ctx : NkContext*, symbol : NkSymbolType, label : LibC::Char*, align : NkFlags, value : NkBool) : NkBool
+  fun nk_select_symbol_text? = nk_select_symbol_text(ctx : NkContext*, symbol : NkSymbolType, text : LibC::Char*, len : LibC::Int,
+                                                     align : NkFlags, value : NkBool) : NkBool
+
   # Text Edit
   enum NkEditFlags
     NK_EDIT_DEFAULT              =    0
