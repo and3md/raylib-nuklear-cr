@@ -1123,6 +1123,8 @@ lib RayNuk
     len : LibC::Int
   end
 
+  # Text Editor - line 4326
+
   NK_TEXTEDIT_UNDOSTATECOUNT = 99
 
   NK_TEXTEDIT_UNDOCHARCOUNT = 999
@@ -1182,6 +1184,28 @@ lib RayNuk
 
   alias NkPluginFilterCallback = (NkTextEdit*, NkRune -> NkBool)
   alias NkPluginPasteCallback = (NkHandle, NkTextEdit* -> Void)
+
+  # filter function
+  fun nk_filter_default? = nk_filter_default(box : NkTextEdit*, unicode : NkRune) : NkBool
+  fun nk_filter_ascii? = nk_filter_ascii(box : NkTextEdit*, unicode : NkRune) : NkBool
+  fun nk_filter_float? = nk_filter_float(box : NkTextEdit*, unicode : NkRune) : NkBool
+  fun nk_filter_decimal? = nk_filter_decimal(box : NkTextEdit*, unicode : NkRune) : NkBool
+  fun nk_filter_hex? = nk_filter_hex(box : NkTextEdit*, unicode : NkRune) : NkBool
+  fun nk_filter_oct? = nk_filter_oct(box : NkTextEdit*, unicode : NkRune) : NkBool
+  fun nk_filter_binary? = nk_filter_binary(box : NkTextEdit*, unicode : NkRune) : NkBool
+
+  # text editor
+  fun nk_textedit_init(state : NkTextEdit*, alloc : NkAllocator*, size : NkSize)
+  fun nk_textedit_init_fixed(state : NkTextEdit*, memory : Void*, size : NkSize)
+  fun nk_textedit_free(state : NkTextEdit*)
+  fun nk_textedit_text(state : NkTextEdit*, text : LibC::Char*, total_len : LibC::Int)
+  fun nk_textedit_delete(state : NkTextEdit*, where : LibC::Int, len : LibC::Int)
+  fun nk_textedit_delete_selection(state : NkTextEdit*)
+  fun nk_textedit_select_all(state : NkTextEdit*)
+  fun nk_textedit_cut? = nk_textedit_cut(state : NkTextEdit*)
+  fun nk_textedit_paste? = nk_textedit_paste(state : NkTextEdit*, ctext : LibC::Char*, len : LibC::Int)
+  fun nk_textedit_undo(state : NkTextEdit*)
+  fun nk_textedit_redo(state : NkTextEdit*)
 
   # Command 4494
 
