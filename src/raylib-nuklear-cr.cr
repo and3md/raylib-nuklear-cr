@@ -717,6 +717,21 @@ lib RayNuk
   fun nk_edit_focus(ctx : NkContext*, flags : NkFlags)
   fun nk_edit_unfocus(ctx : NkContext*)
 
+  # Chart - line 3534
+  fun nk_chart_begin? = nk_chart_begin(ctx : NkContext*, type : NkChartType, count : LibC::Int, min : LibC::Float, max : LibC::Float) : NkBool
+  fun nk_chart_begin_colored? = nk_chart_begin_colored(ctx : NkContext*, type : NkChartType, color : NkColor, highlight : NkColor,
+                                                       count : LibC::Int, min : LibC::Float, max : LibC::Float) : NkBool
+  fun nk_chart_add_slot(ctx : NkContext*, type : NkChartType, count : LibC::Int, min : LibC::Float, max : LibC::Float)
+  fun nk_chart_add_slot_colored(ctx : NkContext*, type : NkChartType, color : NkColor, highlight : NkColor,
+                                count : LibC::Int, min : LibC::Float, max : LibC::Float) : NkBool
+  fun nk_chart_push(ctx : NkContext*, value : LibC::Float) : NkFlags
+  fun nk_chart_push_slot(ctx : NkContext*, value : LibC::Float, slot : LibC::Int) : NkFlags
+  fun nk_chart_end(ctx : NkContext*)
+  fun nk_plot(ctx : NkContext*, type : NkChartType, values : LibC::Float*, count : LibC::Int, offset : LibC::Int)
+  # float(*value_getter)(void* user, int index)
+  alias NkChartValueGetterCallback = (Void*, LibC::Int) -> LibC::Float
+  fun nk_plot_function(ctx : NkContext*, type : NkChartType, userdata : Void*, value_getter : NkChartValueGetterCallback, count : LibC::Int, offset : LibC::Int)
+
   # Style 3642
   NK_WIDGET_DISABLED_FACTOR = 0.5
 
@@ -1791,7 +1806,7 @@ lib RayNuk
 
   # Wybrać największe
   # NK_VALUE_PAGE_CAPACITY = (sizeof(NkPanel) / sizeof(NkUint)) / 2
-  
+
   struct NkTable
     seq : LibC::UInt
     size : LibC::UInt
