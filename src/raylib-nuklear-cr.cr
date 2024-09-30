@@ -739,6 +739,27 @@ lib RayNuk
   fun nk_popup_get_scroll(ctx : NkContext*, offset_x : NkUint*, offset_y : NkUint*)
   fun nk_popup_set_scroll(ctx : NkContext*, offset_x : NkUint, offset_y : NkUint)
 
+  # Combobox - line 3558
+  fun nk_combo(ctx : NkContext*, items : Pointer(LibC::Char*), count : LibC::Int, selected : LibC::Int,
+               item_height : LibC::Int, size : NkVec2) : LibC::Int
+  fun nk_combo_separator(ctx : NkContext*, items_separated_by_separator : LibC::Char*, separator : LibC::Int,
+                         selected : LibC::Int, count : LibC::Int, item_height : LibC::Int, size : NkVec2) : LibC::Int
+  fun nk_combo_string(ctx : NkContext*, items_separated_by_zeros : LibC::Char*, selected : LibC::Int,
+                      count : LibC::Int, item_height : LibC::Int, size : NkVec2) : LibC::Int
+  # void(*item_getter)(void*, int, const char**)
+  alias NkComboboxItemGetterCallback = (Void*, LibC::Int, Pointer(LibC::Char*)) -> Void
+  fun nk_combo_callback(ctx : NkContext*, item_getter : NkComboboxItemGetterCallback, userdata : Void*,
+                        selected : LibC::Int, count : LibC::Int, item_height : LibC::Int, size : NkVec2) : LibC::Int
+
+  fun nk_combobox(ctx : NkContext*, items : Pointer(LibC::Char*), count : LibC::Int, selected : LibC::Int*,
+                  item_height : LibC::Int, size : NkVec2)
+  fun nk_combobox_string(ctx : NkContext*, items_separated_by_zeros : LibC::Char*, selected : LibC::Int*,
+                         count : LibC::Int, item_height : LibC::Int, size : NkVec2)
+  fun nk_combobox_separator(ctx : NkContext*, items_separated_by_separator : LibC::Char*, separator : LibC::Int,
+                            selected : LibC::Int*, count : LibC::Int, item_height : LibC::Int, size : NkVec2)
+  fun nk_combobox_callback(ctx : NkContext*, item_getter : NkComboboxItemGetterCallback, userdata : Void*,
+                           selected : LibC::Int*, count : LibC::Int, item_height : LibC::Int, size : NkVec2)
+
   # Style 3642
   NK_WIDGET_DISABLED_FACTOR = 0.5
 
