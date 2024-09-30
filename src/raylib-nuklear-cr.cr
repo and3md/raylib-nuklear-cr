@@ -1003,6 +1003,18 @@ lib RayNuk
   fun nk_subimage_id(id : LibC::Int, w : NkUShort, h : NkUShort, sub_region : NkRect) : NkImage
   fun nk_subimage_handle(handle : NkHandle, w : NkUShort, h : NkUShort, sub_region : NkRect) : NkImage
 
+  # 9-Slice - line 3796
+  fun nk_nine_slice_handle(handle : NkHandle, l : NkUShort, t : NkUShort, r : NkUShort, b : NkUShort) : NkNineSlice
+  fun nk_nine_slice_ptr(ptr : Void*, l : NkUShort, t : NkUShort, r : NkUShort, b : NkUShort) : NkNineSlice
+  fun nk_nine_slice_id(id : LibC::Int, l : NkUShort, t : NkUShort, r : NkUShort, b : NkUShort) : NkNineSlice
+  fun nk_nine_slice_is_sub9slice(img : NkNineSlice*) : LibC::Int
+  fun nk_sub9slice_ptr(ptr : Void*, w : NkUShort, h : NkUShort, sub_region : NkRect,
+                       l : NkUShort, t : NkUShort, r : NkUShort, b : NkUShort) : NkNineSlice
+  fun nk_sub9slice_id(id : LibC::Int*, w : NkUShort, h : NkUShort, sub_region : NkRect,
+                      l : NkUShort, t : NkUShort, r : NkUShort, b : NkUShort) : NkNineSlice
+  fun nk_sub9slice_handle(handle : NkHandle, w : NkUShort, h : NkUShort, sub_region : NkRect,
+                          l : NkUShort, t : NkUShort, r : NkUShort, b : NkUShort) : NkNineSlice
+
   struct NkUserFontGlyth
     uv : StaticArray(NkVec2, 2)
     offset : NkVec2
