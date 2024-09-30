@@ -853,7 +853,7 @@ lib RayNuk
   fun nk_menu_close(ctx : NkContext*)
   fun nk_menu_end(ctx : NkContext*)
 
-  # Style 3642
+  # Style - line 3642
   NK_WIDGET_DISABLED_FACTOR = 0.5
 
   enum NkStyleColors
@@ -902,6 +902,35 @@ lib RayNuk
     NK_CURSOR_RESIZE_TOP_RIGHT_DOWN_LEFT
     NK_CURSOR_COUNT
   end
+
+  fun nk_style_default(ctx : NkContext*)
+  fun nk_style_form_table(ctx : NkContext*, table : NkColor*)
+  fun nk_style_load_cursor(ctx : NkContext*, cursor : NkStyleCursor, c : NkCursor*)
+  fun nk_style_load_all_cursors(ctx : NkContext*, cursors : NkCursor*)
+  fun nk_style_get_color_by_name(c : NkStyleColors) : LibC::Char*
+  fun nk_style_set_font(ctx : NkContext*, font : NkUserFont*)
+  fun nk_style_set_cursor? = nk_style_set_cursor(ctx : NkContext*, cursor : NkStyleCursor) : NkBool
+  fun nk_style_show_cursor(ctx : NkContext*)
+  fun nk_style_hide_cursor(ctx : NkContext*)
+  fun nk_style_push_font? = nk_style_push_font(ctx : NkContext*, font : NkUserFont*) : NkBool
+  fun nk_style_push_float? = nk_style_push_float(ctx : NkContext*, style_item : LibC::Float*,
+                                                 temp_value : LibC::Float) : NkBool
+  fun nk_style_push_vec2? = nk_style_push_vec2(ctx : NkContext*, style_item : NkVec2*,
+                                               temp_value : NkVec2) : NkBool
+  fun nk_style_push_style_item? = nk_style_push_style_item(ctx : NkContext*, style_item : NkStyleItem*,
+                                                           temp_value : NkStyleItem) : NkBool
+  fun nk_style_push_flags? = nk_style_push_flags(ctx : NkContext*, style_item : NkFlags*,
+                                                 temp_value : NkFlags) : NkBool
+  fun nk_style_push_color? = nk_style_push_color(ctx : NkContext*, style_item : NkColor*,
+                                                 temp_value : NkColor) : NkBool
+  fun nk_style_pop_font(ctx : NkContext*)
+  fun nk_style_pop_float(ctx : NkContext*)
+  fun nk_style_pop_vec2(ctx : NkContext*)
+  fun nk_style_pop_style_item(ctx : NkContext*)
+  fun nk_style_pop_flags(ctx : NkContext*)
+  fun nk_style_pop_color(ctx : NkContext*)
+
+  # Color - line 3718
 
   struct NkUserFontGlyth
     uv : StaticArray(NkVec2, 2)
