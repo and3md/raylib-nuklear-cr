@@ -992,6 +992,17 @@ lib RayNuk
   fun nk_color_hsva_f(out_h : LibC::Float*, out_s : LibC::Float*, out_v : LibC::Float*, out_a : LibC::Float*, in_col : NkColor)
   fun nk_color_hsva_fv(out_hsva : LibC::Float*, in_col : NkColor)
 
+  # Image - line 3782
+  fun nk_handle_ptr(ptr : Void*) : NkHandle
+  fun nk_handle_id(id : LibC::Int) : NkHandle
+  fun nk_image_handle(handle : NkHandle) : NkImage
+  fun nk_image_ptr(ptr : Void*) : NkImage
+  fun nk_image_id(id : LibC::Int) : NkImage
+  fun nk_image_is_subimage? = nk_image_is_subimage(img : NkImage*) : NkBool
+  fun nk_subimage_ptr(ptr : Void*, w : NkUShort, h : NkUShort, sub_region : NkRect) : NkImage
+  fun nk_subimage_id(id : LibC::Int, w : NkUShort, h : NkUShort, sub_region : NkRect) : NkImage
+  fun nk_subimage_handle(handle : NkHandle, w : NkUShort, h : NkUShort, sub_region : NkRect) : NkImage
+
   struct NkUserFontGlyth
     uv : StaticArray(NkVec2, 2)
     offset : NkVec2
