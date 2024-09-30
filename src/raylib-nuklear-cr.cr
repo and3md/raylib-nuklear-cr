@@ -1015,6 +1015,25 @@ lib RayNuk
   fun nk_sub9slice_handle(handle : NkHandle, w : NkUShort, h : NkUShort, sub_region : NkRect,
                           l : NkUShort, t : NkUShort, r : NkUShort, b : NkUShort) : NkNineSlice
 
+  # Math - line 3808
+  fun nk_murmur_hash(key : Void*, len : LibC::Int, seed : NkHash) : NkHash
+  fun nk_triangle_from_direction(result : NkVec2*, r : NkRect, pad_x : LibC::Float,
+                                 pad_y : LibC::Float, direction : NkHeading)
+
+  fun nk_vec2(x : LibC::Float, y : LibC::Float) : NkVec2
+  fun nk_vec2i(x : LibC::Int, y : LibC::Int) : NkVec2
+  fun nk_vec2v(xy : LibC::Float*) : NkVec2
+  fun nk_vec2iv(xy : LibC::Int*) : NkVec2
+
+  fun nk_get_null_rect : NkRect
+  fun nk_rect(x : LibC::Float, y : LibC::Float, w : LibC::Float, h : LibC::Float) : NkRect
+  fun nk_recti(x : LibC::Int, y : LibC::Int, w : LibC::Int, h : LibC::Int) : NkRect
+  fun nk_recta(pos : NkVec2, size : NkVec2) : NkRect
+  fun nk_rectv(xywh : LibC::Float*) : NkRect
+  fun nk_rectiv(xywh : LibC::Float*) : NkRect
+  fun nk_rect_pos(rect : NkRect) : NkVec2
+  fun nk_rect_size(rect : NkRect) : NkVec2
+
   struct NkUserFontGlyth
     uv : StaticArray(NkVec2, 2)
     offset : NkVec2
