@@ -795,6 +795,25 @@ lib RayNuk
   fun nk_combo_close(ctx : NkContext*)
   fun nk_combo_end(ctx : NkContext*)
 
+  # Contextual - line 3593
+  fun nk_contextual_begin? = nk_contextual_begin(ctx : NkContext*, flags : NkFlags, size : NkVec2,
+                                                 trigger_bounds : NkRect) : NkBool
+  fun nk_contextual_item_text? = nk_contextual_item_text(ctx : NkContext*, text : LibC::Char*,
+                                                         len : LibC::Int, align : NkFlags) : NkBool
+  fun nk_contextual_item_label? = nk_contextual_item_label(ctx : NkContext*, label : LibC::Char*,
+                                                           align : NkFlags) : NkBool
+
+  fun nk_contextual_item_image_label? = nk_contextual_item_image_label(ctx : NkContext*, img : NkImage, label : LibC::Char*,
+                                                                       align : NkFlags) : NkBool
+  fun nk_contextual_item_image_text? = nk_contextual_item_image_text(ctx : NkContext*, img : NkImage, text : LibC::Char*,
+                                                                     len : LibC::Int, align : NkFlags) : NkBool
+  fun nk_contextual_item_symbol_label? = nk_contextual_item_symbol_label(ctx : NkContext*, symbol : NkSymbolType, label : LibC::Char*,
+                                                                         align : NkFlags) : NkBool
+  fun nk_contextual_item_symbol_text? = nk_contextual_item_symbol_text(ctx : NkContext*, symbol : NkSymbolType, text : LibC::Char*,
+                                                                       len : LibC::Int, align : NkFlags) : NkBool
+  fun nc_contextual_close(ctx : NkContext*)
+  fun nc_contextual_end(ctx : NkContext*)
+
   # Style 3642
   NK_WIDGET_DISABLED_FACTOR = 0.5
 
