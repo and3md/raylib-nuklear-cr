@@ -931,6 +931,66 @@ lib RayNuk
   fun nk_style_pop_color(ctx : NkContext*)
 
   # Color - line 3718
+  fun nk_rgb(r : LibC::Int, g : LibC::Int, b : LibC::Int) : NkColor
+  fun nk_rgb_iv(rgb : LibC::Int*) : NkColor
+  fun nk_rgb_bv(rgb : NkByte*) : NkColor
+  fun nk_rgb_f(r : LibC::Float, g : LibC::Float, b : LibC::Float) : NkColor
+  fun nk_rgb_fv(rgb : LibC::Float*) : NkColor
+  fun nk_rgb_cf(c : NkColorF) : NkColor
+  fun nk_rgb_hex(rgb : LibC::Char*) : NkColor
+  fun nk_rgb_factor(col : NkColor, factor : LibC::Float) : NkColor
+
+  fun nk_rgba(r : LibC::Int, g : LibC::Int, b : LibC::Int, a : LibC::Int) : NkColor
+  fun nk_rgba_u32(rgba : NkUint) : NkColor
+  fun nk_rgba_iv(rgba : LibC::Int*) : NkColor
+  fun nk_rgba_bv(rgba : NkByte*) : NkColor
+  fun nk_rgba_f(r : LibC::Float, g : LibC::Float, b : LibC::Float, a : LibC::Float) : NkColor
+  fun nk_rgba_fv(rgba : LibC::Float*) : NkColor
+  fun nk_rgba_cf(c : NkColorF) : NkColor
+  fun nk_rgba_hex(rgba : LibC::Char*) : NkColor
+
+  fun nk_hsva_colorf(h : LibC::Float, s : LibC::Float, v : LibC::Float, a : LibC::Float) : NkColorF
+  fun nk_hsva_colorfv(c : LibC::Float*) : NkColorF
+  fun nk_colorf_hsva_f(out_h : LibC::Float*, out_s : LibC::Float*, out_v : LibC::Float, out_a : LibC::Float, in_color : NkColorF)
+  fun nk_colorf_hsva_fv(hsva : LibC::Float*, in_color : NkColorF)
+
+  fun nk_hsv(h : LibC::Int, s : LibC::Int, v : LibC::Int) : NkColor
+  fun nk_hsv_iv(hsv : LibC::Int*) : NkColor
+  fun nk_hsv_bv(hsv : NkByte*) : NkColor
+  fun nk_hsv_f(h : LibC::Float, s : LibC::Float, v : LibC::Float) : NkColor
+  fun nk_hsv_fv(hsv : LibC::Float*) : NkColor
+
+  fun nk_hsva(h : LibC::Int, s : LibC::Int, v : LibC::Int, a : LibC::Int) : NkColor
+  fun nk_hsva_iv(hsva : LibC::Int*) : NkColor
+  fun nk_hsva_bv(hsva : NkByte*) : NkColor
+  fun nk_hsva_f(h : LibC::Float, s : LibC::Float, v : LibC::Float, a : LibC::Float) : NkColor
+  fun nk_hsva_fv(hsva : LibC::Float*) : NkColor
+
+  # color (conversion nuklear --> user)
+  fun nk_color_f(r : LibC::Float*, g : LibC::Float*, b : LibC::Float*, a : LibC::Float*, in_col : NkColor)
+  fun nk_color_fv(rgba : LibC::Float*, in_col : NkColor)
+  fun nk_color_cf(color : NkColor) : NkColorF
+
+  fun nk_color_d(r : LibC::Double*, g : LibC::Double*, b : LibC::Double*, a : LibC::Double*, in_col : NkColor)
+  fun nk_color_dv(rgba_out : LibC::Double*, in_col : NkColor)
+
+  fun nk_color_u32(in_col : NkColor) : NkUint
+  fun nk_color_hex_rgba(output : LibC::Char*, in_col : NkColor)
+  fun nk_color_hex_rgb(output : LibC::Char*, in_col : NkColor)
+
+  fun nk_color_hsv_i(out_h : LibC::Int*, out_s : LibC::Int*, out_v : LibC::Int*, in_col : NkColor)
+  fun nk_color_hsv_b(out_h : NkByte*, out_s : NkByte*, out_v : NkByte*, in_col : NkColor)
+  fun nk_color_hsv_iv(out_hsv : LibC::Int*, in_col : NkColor)
+  fun nk_color_hsv_bv(out_hsv : NkByte*, in_col : NkColor)
+  fun nk_color_hsv_f(out_h : LibC::Float*, out_s : LibC::Float*, out_v : LibC::Float*, in_col : NkColor)
+  fun nk_color_hsv_fv(out_hsv : LibC::Float*, in_col : NkColor)
+
+  fun nk_color_hsva_i(out_h : LibC::Int*, out_s : LibC::Int*, out_v : LibC::Int*, out_a : LibC::Int*, in_col : NkColor)
+  fun nk_color_hsva_b(out_h : NkByte*, out_s : NkByte*, out_v : NkByte*, out_a : NkByte*, in_col : NkColor)
+  fun nk_color_hsva_iv(out_hsva : LibC::Int*, in_col : NkColor)
+  fun nk_color_hsva_bv(out_hsva : NkByte*, in_col : NkColor)
+  fun nk_color_hsva_f(out_h : LibC::Float*, out_s : LibC::Float*, out_v : LibC::Float*, out_a : LibC::Float*, in_col : NkColor)
+  fun nk_color_hsva_fv(out_hsva : LibC::Float*, in_col : NkColor)
 
   struct NkUserFontGlyth
     uv : StaticArray(NkVec2, 2)
