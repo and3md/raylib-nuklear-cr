@@ -819,6 +819,40 @@ lib RayNuk
   fun nk_tooltip_begin? = nk_tooltip_begin(ctx : NkContext*, width : LibC::Float) : NkBool
   fun nk_tooltip_end(ctx : NkContext*)
 
+  # Menu - line 3619
+  fun nk_menubar_begin(ctx : NkContext*)
+  fun nk_menubar_end(ctx : NkContext*)
+  fun nk_menu_begin_text? = nk_menu_begin_text(ctx : NkContext*, title : LibC::Char*, title_len : LibC::Int,
+                                               align : NkFlags, size : NkVec2) : NkBool
+  fun nk_menu_begin_label? = nk_menu_begin_label(ctx : NkContext*, text : LibC::Char*, align : NkFlags,
+                                                 size : NkVec2) : NkBool
+  fun nk_menu_begin_image? = nk_menu_begin_image(ctx : NkContext*, id : LibC::Char*, img : NkImage, size : NkVec2) : NkBool
+  fun nk_menu_begin_image_text? = nk_menu_begin_image_text(ctx : NkContext*, title : LibC::Char*,
+                                                           len : LibC::Int, align : NkFlags, img : NkImage,
+                                                           size : NkVec2) : NkBool
+  fun nk_menu_begin_image_label? = nk_menu_begin_image_label(ctx : NkContext*, title : LibC::Char*, align : NkFlags,
+                                                             img : NkImage, size : NkVec2) : NkBool
+  fun nk_menu_begin_symbol? = nk_menu_begin_symbol(ctx : NkContext*, id : LibC::Char*, symbol : NkSymbolType,
+                                                   size : NkVec2) : NkBool
+  fun nk_menu_begin_symbol_text? = nk_menu_begin_symbol_text(ctx : NkContext*, title : LibC::Char*,
+                                                             len : LibC::Int, align : NkFlags, symbol : NkSymbolType,
+                                                             size : NkVec2) : NkBool
+  fun nk_menu_begin_symbol_label? = nk_menu_begin_symbol_label(ctx : NkContext*, title : LibC::Char*,
+                                                               align : NkFlags, symbol : NkSymbolType, size : NkVec2) : NkBool
+  fun nk_menu_item_text? = nk_menu_item_text(ctx : NkContext*, title : LibC::Char*, title_len : LibC::Int,
+                                             align : NkFlags) : NkBool
+  fun nk_menu_item_label? = nk_menu_item_label(ctx : NkContext*, text : LibC::Char*, align : NkFlags) : NkBool
+  fun nk_menu_item_image_label? = nk_menu_item_image_label(ctx : NkContext*, img : NkImage, title : LibC::Char*,
+                                                           align : NkFlags) : NkBool
+  fun nk_menu_item_image_text? = nk_menu_item_image_text(ctx : NkContext*, img : NkImage, title : LibC::Char*,
+                                                         len : LibC::Int, align : NkFlags) : NkBool
+  fun nk_menu_item_symbol_label? = nk_menu_item_symbol_label(ctx : NkContext*, symbol : NkSymbolType,
+                                                             title : LibC::Char*, align : NkFlags) : NkBool
+  fun nk_menu_item_symbol_text? = nk_menu_item_symbol_text(ctx : NkContext*, symbol : NkSymbolType,
+                                                           title : LibC::Char*, len : LibC::Int, align : NkFlags) : NkBool
+  fun nk_menu_close(ctx : NkContext*)
+  fun nk_menu_end(ctx : NkContext*)
+
   # Style 3642
   NK_WIDGET_DISABLED_FACTOR = 0.5
 
