@@ -814,6 +814,11 @@ lib RayNuk
   fun nc_contextual_close(ctx : NkContext*)
   fun nc_contextual_end(ctx : NkContext*)
 
+  # Tooltip - line 3607
+  fun nk_tooltip(ctx : NkContext*, text : LibC::Char*)
+  fun nk_tooltip_begin? = nk_tooltip_begin(ctx : NkContext*, width : LibC::Float) : NkBool
+  fun nk_tooltip_end(ctx : NkContext*)
+
   # Style 3642
   NK_WIDGET_DISABLED_FACTOR = 0.5
 
