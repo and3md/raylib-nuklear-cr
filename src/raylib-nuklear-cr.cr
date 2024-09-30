@@ -760,6 +760,41 @@ lib RayNuk
   fun nk_combobox_callback(ctx : NkContext*, item_getter : NkComboboxItemGetterCallback, userdata : Void*,
                            selected : LibC::Int*, count : LibC::Int, item_height : LibC::Int, size : NkVec2)
 
+  # Abstract Combobox - line 3571
+  fun nk_combo_begin_text? = nk_combo_begin_text(ctx : NkContext*, selected : LibC::Char*,
+                                                 len : LibC::Int, size : NkVec2) : NkBool
+  fun nk_combo_begin_label? = nk_combo_begin_label(ctx : NkContext*, selected : LibC::Char*,
+                                                   size : NkVec2) : NkBool
+  fun nk_combo_begin_color? = nk_combo_begin_color(ctx : NkContext*, color : NkColor, size : NkVec2) : NkBool
+  fun nk_combo_begin_symbol? = nk_combo_begin_symbol(ctx : NkContext*, symbol_type : NkSymbolType,
+                                                     size : NkVec2) : NkBool
+  fun nk_combo_begin_symbol_label? = nk_combo_begin_symbol_label(ctx : NkContext*, selected : LibC::Char*,
+                                                                 symbol_type : NkSymbolType, size : NkVec2) : NkBool
+  fun nk_combo_begin_symbol_text? = nk_combo_begin_symbol_text(ctx : NkContext*, selected : LibC::Char*,
+                                                               len : LibC::Int, symbol_type : NkSymbolType,
+                                                               size : NkVec2) : NkBool
+  fun nk_combo_begin_image? = nk_combo_begin_image(ctx : NkContext*, img : NkImage, size : NkVec2) : NkBool
+  fun nk_combo_begin_image_label? = nk_combo_begin_image_label(ctx : NkContext*, selected : LibC::Char*,
+                                                               image : NkImage, size : NkVec2) : NkBool
+  fun nk_combo_begin_image_text? = nk_combo_begin_image_text(ctx : NkContext*, selected : LibC::Char*,
+                                                             len : LibC::Int, img : NkImage, size : NkVec2) : NkBool
+  fun nk_combo_item_label? = nk_combo_item_label(ctx : NkContext*, selected : LibC::Char*, alignment : NkFlags) : NkBool
+  fun nk_combo_item_text? = nk_combo_item_text(ctx : NkContext*, selected : LibC::Char*,
+                                               len : LibC::Int, alignment : NkFlags) : NkBool
+  fun nk_combo_item_image_label? = nk_combo_item_image_label(ctx : NkContext*, img : NkImage,
+                                                             selected : LibC::Char*, alignment : NkFlags) : NkBool
+  fun nk_combo_item_image_text? = nk_combo_item_image_text(ctx : NkContext*, img : NkImage,
+                                                           selected : LibC::Char*, len : LibC::Int,
+                                                           alignment : NkFlags) : NkBool
+  fun nk_combo_item_symbol_label? = nk_combo_item_symbol_label(ctx : NkContext*,
+                                                               symbol_type : NkSymbolType, selected : LibC::Char*,
+                                                               alignment : NkFlags) : NkBool
+  fun nk_combo_item_symbol_text? = nk_combo_item_symbol_text(ctx : NkContext*,
+                                                             symbol_type : NkSymbolType, selected : LibC::Char*,
+                                                             len : LibC::Int, alignment : NkFlags) : NkBool
+  fun nk_combo_close(ctx : NkContext*)
+  fun nk_combo_end(ctx : NkContext*)
+
   # Style 3642
   NK_WIDGET_DISABLED_FACTOR = 0.5
 
