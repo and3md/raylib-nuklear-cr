@@ -1034,6 +1034,7 @@ lib RayNuk
   fun nk_rect_pos(rect : NkRect) : NkVec2
   fun nk_rect_size(rect : NkRect) : NkVec2
 
+  # Font - line 3855
   struct NkUserFontGlyth
     uv : StaticArray(NkVec2, 2)
     offset : NkVec2
@@ -1053,7 +1054,7 @@ lib RayNuk
     width : NkTextWidthFCallback
   end
 
-  # Memory buffer 4176
+  # Memory buffer - 4174
   struct NkMemoryStatus
     memory : Void*
     type : LibC::UInt
@@ -1103,6 +1104,18 @@ lib RayNuk
     size : NkSize
     # current size of the buffer
   end
+
+  fun nk_buffer_init(b : NkBuffer*, a : NkAllocator*, size : NkSize)
+  fun nk_buffer_init_fixed(b : NkBuffer*, memory : Void*, size : NkSize)
+  fun nk_buffer_info(s : NkMemoryStatus*, b : NkBuffer*)
+  fun nk_buffer_push(b : NkBuffer*, type : NkBufferAllocationType, memory : Void*, size : NkSize, align : NkSize)
+  fun nk_buffer_mark(b : NkBuffer*, type : NkBufferAllocationType)
+  fun nk_buffer_reset(b : NkBuffer*, type : NkBufferAllocationType)
+  fun nk_buffer_clear(b : NkBuffer*)
+  fun nk_buffer_free(b : NkBuffer*)
+  fun nk_buffer_memory(b : NkBuffer*) : Void*
+  fun nk_buffer_memory_const(b : NkBuffer*) : Void*
+  fun nk_buffer_total(b : NkBuffer*) : NkSize
 
   # String 4270
   struct NkStr
