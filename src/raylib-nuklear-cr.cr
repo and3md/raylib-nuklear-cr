@@ -732,6 +732,13 @@ lib RayNuk
   alias NkChartValueGetterCallback = (Void*, LibC::Int) -> LibC::Float
   fun nk_plot_function(ctx : NkContext*, type : NkChartType, userdata : Void*, value_getter : NkChartValueGetterCallback, count : LibC::Int, offset : LibC::Int)
 
+  # Popup - line 3548
+  fun nk_popup_begin? = nk_popup_begin(ctx : NkContext*, type : NkPopupType, title : LibC::Char*, flags : NkFlags, bounds : NkRect) : NkBool
+  fun nk_popup_close(ctx : NkContext*)
+  fun nk_popup_end(ctx : NkContext*)
+  fun nk_popup_get_scroll(ctx : NkContext*, offset_x : NkUint*, offset_y : NkUint*)
+  fun nk_popup_set_scroll(ctx : NkContext*, offset_x : NkUint, offset_y : NkUint)
+
   # Style 3642
   NK_WIDGET_DISABLED_FACTOR = 0.5
 
