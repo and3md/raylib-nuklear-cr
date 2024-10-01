@@ -2212,6 +2212,7 @@ lib RayNuk
     seq : LibC::UInt
   end
 
+  # Raylib-Nuklear API - raylib-nuklear.h
   fun init_nuklear = InitNuklear(font_size : LibC::Int) : NkContext*
   # Initialize the Nuklear GUI context, with a custom font
   fun init_nuklear_ex = InitNuklearEx(font : Raylib::Font, font_size : LibC::Float) : NkContext*
