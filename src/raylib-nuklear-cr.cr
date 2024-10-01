@@ -1311,6 +1311,23 @@ lib RayNuk
     mouse : NkMouse
   end
 
+  fun nk_input_has_mouse_click? = nk_input_has_mouse_click(i : NkInput*, buttons : NkButtons) : NkBool
+  fun nk_input_has_mouse_click_in_rect? = nk_input_has_mouse_click_in_rect(i : NkInput*, buttons : NkButtons, rect : NkRect) : NkBool
+  fun nk_input_has_mouse_click_in_button_rect? = nk_input_has_mouse_click_in_button_rect(i : NkInput*, buttons : NkButtons, rect : NkRect) : NkBool
+  fun nk_input_has_mouse_click_down_in_rect? = nk_input_has_mouse_click_down_in_rect(i : NkInput*, buttons : NkButtons, rect : NkRect, down : NkBool) : NkBool
+  fun nk_input_is_mouse_click_in_rect? = nk_input_is_mouse_click_in_rect(i : NkInput*, buttons : NkButtons, rect : NkRect) : NkBool
+  fun nk_input_is_mouse_click_down_in_rect? = nk_input_is_mouse_click_down_in_rect(i : NkInput*, buttons : NkButtons, rect : NkRect, down : NkBool) : NkBool
+  fun nk_input_any_mouse_click_in_rect? = nk_input_any_mouse_click_in_rect(i : NkInput*, rect : NkRect) : NkBool
+  fun nk_input_is_mouse_prev_hovering_rect? = nk_input_is_mouse_prev_hovering_rect(i : NkInput*, rect : NkRect) : NkBool
+  fun nk_input_is_mouse_hovering_rect? = nk_input_is_mouse_hovering_rect(i : NkInput*, rect : NkRect) : NkBool
+  fun nk_input_mouse_clicked? = nk_input_mouse_clicked(i : NkInput*, buttons : NkButtons, rect : NkRect) : NkBool
+  fun nk_input_is_mouse_down? = nk_input_is_mouse_down(i : NkInput*, buttons : NkButtons) : NkBool
+  fun nk_input_is_mouse_pressed? = nk_input_is_mouse_pressed(i : NkInput*, buttons : NkButtons) : NkBool
+  fun nk_input_is_mouse_released? = nk_input_is_mouse_released(i : NkInput*, buttons : NkButtons) : NkBool
+  fun nk_input_is_key_pressed? = nk_input_is_key_pressed(i : NkInput*, keys : NkKeys) : NkBool
+  fun nk_input_is_key_released? = nk_input_is_key_released(i : NkInput*, keys : NkKeys) : NkBool
+  fun nk_input_is_key_down? = nk_input_is_key_down(i : NkInput*, keys : NkKeys) : NkBool
+
   # GUI 4931
 
   enum NkStyleItemType
