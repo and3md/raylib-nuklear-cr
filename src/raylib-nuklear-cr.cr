@@ -1207,8 +1207,7 @@ lib RayNuk
   fun nk_textedit_undo(state : NkTextEdit*)
   fun nk_textedit_redo(state : NkTextEdit*)
 
-  # Command 4494
-
+  # Drawing - line 4442
   enum NkCommandType
     NK_COMMAND_NOP
     NK_COMMAND_SCISSOR
@@ -1238,6 +1237,10 @@ lib RayNuk
     userdata : NkHandle
   end
 
+  # typedef void (*nk_command_custom_callback)(void *canvas, short x,short y,
+  #  unsigned short w, unsigned short h, nk_handle callback_data);
+  alias NkCommandCustomCallBack = (Void*, LibC::Short, LibC::Short, LibC::UShort, LibC::UShort, NkHandle) -> Void
+
   struct NkCommandBuffer
     base : NkBuffer*
     clip : NkRect
@@ -1247,6 +1250,31 @@ lib RayNuk
     end_field : NkSize
     last : NkSize
   end
+
+  # shape outlines  - line 4690
+  fun nk_stroke_line(b : NkCommandBuffer*, x0 : LibC::Float, y0 : LibC::Float, x1 : LibC::Float, y1 : LibC::Float, line_thickness : LibC::Float, color : NkColor)
+  fun nk_stroke_curve(b : NkCommandBuffer*, ax : LibC::Float, ay : LibC::Float, ctrl0x : LibC::Float, ctrl0y : LibC::Float, ctrl1x : LibC::Float, ctrl1y : LibC::Float, line_thickness : LibC::Float, color : NkColor)
+  fun nk_stroke_rect(b : NkCommandBuffer*, rect : NkRect, rounding : LibC::Float, line_thickness : LibC::Float, color : NkColor)
+  fun nk_stroke_circle(b : NkCommandBuffer*, rect : NkRect, line_thickness : LibC::Float, color : NkColor)
+  fun nk_stroke_arc(b : NkCommandBuffer*, cx : LibC::Float, cy : LibC::Float, radius : LibC::Float, a_min : LibC::Float, a_max : LibC::Float, line_thickness : LibC::Float, color : NkColor)
+  fun nk_stroke_triangle(b : NkCommandBuffer*, x0 : LibC::Float, y0 : LibC::Float, x1 : LibC::Float, y1 : LibC::Float, x2 : LibC::Float, y2 : LibC::Float, line_thickness : LibC::Float, color : NkColor)
+  fun nk_stroke_polyline(b : NkCommandBuffer*, points : LibC::Float*, point_count : LibC::Int, line_thickness : LibC::Float, color : NkColor)
+  fun nk_stroke_polygon(b : NkCommandBuffer*, points : LibC::Float*, point_count : LibC::Int, line_thickness : LibC::Float, color : NkColor)
+
+  # filled shades - line 4700
+  fun nk_fill_rect(b : NkCommandBuffer*, rect : NkRect, rounding : LibC::Float, color : NkColor)
+  fun nk_fill_rect_multi_color(b : NkCommandBuffer*, rect : NkRect, left : NkColor, top : NkColor, right : NkColor, bottom : NkColor)
+  fun nk_fill_circle(b : NkCommandBuffer*, rect : NkRect, color : NkColor)
+  fun nk_fill_arc(b : NkCommandBuffer*, cx : LibC::Float, cy : LibC::Float, radius : LibC::Float, a_min : LibC::Float, a_max : LibC::Float, color : NkColor)
+  fun nk_fill_triangle(b : NkCommandBuffer*, x0 : LibC::Float, y0 : LibC::Float, x1 : LibC::Float, y1 : LibC::Float, x2 : LibC::Float, y2 : LibC::Float, color : NkColor)
+  fun nk_fill_polygon(b : NkCommandBuffer*, points : LibC::Float*, point_count : LibC::Int, color : NkColor)
+
+  # misc - line 4708
+  fun nk_draw_image(b : NkCommandBuffer*, rect : NkRect, image : NkImage, color : NkColor)
+  fun nk_draw_nine_slice(b : NkCommandBuffer*, rect : NkRect, slc : NkNineSlice, color : NkColor)
+  fun nk_draw_text(b : NkCommandBuffer*, rect : NkRect, text : LibC::Char*, len : LibC::Int, font : NkUserFont*, bg : NkColor, fg : NkColor)
+  fun nk_push_scissor(b : NkCommandBuffer*, rect : NkRect)
+  fun nk_push_custom(b : NkCommandBuffer*, rect : NkRect, custom_command_callback : NkCommandCustomCallBack, usr : NkHandle)
 
   # Input 4720
 
