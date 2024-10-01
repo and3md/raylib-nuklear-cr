@@ -1328,7 +1328,7 @@ lib RayNuk
   fun nk_input_is_key_released? = nk_input_is_key_released(i : NkInput*, keys : NkKeys) : NkBool
   fun nk_input_is_key_down? = nk_input_is_key_down(i : NkInput*, keys : NkKeys) : NkBool
 
-  # GUI 4931
+  # GUI - line 4926
 
   enum NkStyleItemType
     NK_STYLE_ITEM_COLOR
@@ -1830,7 +1830,8 @@ lib RayNuk
   fun nk_style_item_image(img : NkImage) : NkStyleItem
   fun nk_style_item_nine_slice(slice : NkNineSlice) : NkStyleItem
   fun nk_style_item_hide : NkStyleItem
-  # Panel 5431
+
+  # Panel - line 5431
 
   NK_MAX_LAYOUT_ROW_TEMPLATE_COLUMNS = 16
   NK_CHART_MAX_SLOT                  =  4
