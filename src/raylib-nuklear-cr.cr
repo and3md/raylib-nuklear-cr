@@ -2330,6 +2330,10 @@ lib RayNuk
   fun draw_nuklear = DrawNuklear(ctx : NkContext*)
   # Deinitialize the Nuklear context
   fun unload_nuklear = UnloadNuklear(ctx : NkContext*)
+  # Convert a Raylib Font to a Nuklear user font object, Nuklear nk_user_font can't live longer than Raylib Font
+  fun font_to_nuklear = FontToNuklear(font : Raylib::Font) : NkUserFont*
+  # Free nuklear font created with font_to_nuklear
+  fun unload_nuklear_font = UnloadNuklearFont(font : NkUserFont*)
   # Convert a raylib Color to a Nuklear color object
   fun color_to_nuklear = ColorToNuklear(color : Raylib::Color) : NkColor
   # Convert a raylib Color to a Nuklear floating color
