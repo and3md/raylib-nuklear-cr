@@ -1054,6 +1054,110 @@ lib RayNuk
     width : NkTextWidthFCallback
   end
 
+  # enum NkFontCoordType
+  #   NK_COORD_UV
+  #   NK_COORD_PIXEL
+  # end
+
+  # struct NkBackedFont
+  #   height : LibC::Float
+  #   ascent : LibC::Float
+  #   descent : LibC::Float
+  #   glyph_offset : NkRune
+  #   glyph_count : NkRune
+  #   ranges : NkRune*
+  # end
+
+  # struct NkFontConfig
+  #   next : NkFontConfig*
+  #   ttf_blob : Void*
+  #   ttf_size : NkSize
+  #   ttf_data_owned_by_atlas : LibC::UChar
+  #   merge_mode : LibC::UChar
+  #   pixel_snap : LibC::UChar
+  #   oversample_v : LibC::UChar
+  #   oversample_h : LibC::UChar
+  #   padding : StaticArray(LibC::UChar, 3)
+  #   size : LibC::Float
+  #   coord_type : NkFontCoordType
+  #   spacing : NkVec2
+  #   range : NkRune*
+  #   font : NkBackedFont*
+  #   fallback_glyph : NkRune
+  #   n : NkFontConfig*
+  #   p : NkFontConfig*
+  # end
+
+  # struct NkFontGlyph
+  #   codepoint : NkRune
+  #   xadvance : LibC::Float
+  #   x0 : LibC::Float
+  #   y0 : LibC::Float
+  #   x1 : LibC::Float
+  #   y1 : LibC::Float
+  #   w : LibC::Float
+  #   h : LibC::Float
+  #   u0 : LibC::Float
+  #   v0 : LibC::Float
+  #   u1 : LibC::Float
+  #   v1 : LibC::Float
+  # end
+
+  # struct NkFont
+  #   next : NkFont*
+  #   handle : NkUserFont
+  #   info : NkBackedFont
+  #   scale : LibC::Float
+  #   glyphs : NkFontGlyph*
+  #   fallback : NkFontGlyph*
+  #   fallback_codepoint : NkRune
+  #   texture : NkHandle
+  #   config : NkFontConfig
+  # end
+
+  # enum NkFontAtlasFormat
+  #   NK_FONT_ATLAS_ALPHA8
+  #   NK_FONT_ATLAS_RGBA32
+  # end
+
+  # struct NkFontAtlas
+  #   pixel : Void*
+  #   tex_width : LibC::Int
+  #   tex_height : LibC::Int
+  #   permanent : NkAllocator
+  #   temporary : NkAllocator
+  #   custom : NkRectI
+  #   cursors : StaticArray(NkCursor, NkStyleCursor::NK_CURSOR_COUNT)
+  #   glyph_count : LibC::Int
+  #   glyphs : NkFontGlyph*
+  #   default_font : NkFont*
+  #   fonts : NkFont*
+  #   config : NkFontConfig*
+  #   font_num : LibC::Int
+  # end
+
+  # fun nk_font_default_glyph_ranges : NkRune*
+  # fun nk_font_chinese_glyph_ranges : NkRune*
+  # fun nk_font_cyrillic_glyph_ranges : NkRune*
+  # fun nk_font_korean_glyph_ranges : NkRune*
+
+  # fun nk_font_atlas_init_default(atlas : NkFontAtlas*)
+  # fun nk_font_atlas_init(atlas : NkFontAtlas*, alloc : NkAllocator*)
+  # fun nk_font_atlas_init_custom(atlas : NkFontAtlas*, persistent : NkAllocator*, transient : NkAllocator*)
+  # fun nk_font_atlas_begin(atlas : NkFontAtlas*)
+  # fun nk_font_config(pixel_height : LibC::Float) : NkFontConfig
+  # fun nk_font_atlas_add(atlas : NkFontAtlas*, config : NkFontConfig*) : NkFont*
+  # fun nk_font_atlas_add_default(atlas : NkFontAtlas*, height : LibC::Float, config : NkFontConfig*) : NkFont*
+  # fun nk_font_atlas_add_from_memory(atlas : NkFontAtlas*, memory : Void*, size : NkSize, height : LibC::Float, config : NkFontConfig*) : NkFont*
+  # fun nk_font_atlas_add_from_file(atlas : NkFontAtlas*, file_path : LibC::Char*, height : LibC::Float, config : NkFontConfig*) : NkFont*
+  # fun nk_font_atlas_add_compressed(atlas : NkFontAtlas*, memory : Void*, size : NkSize, height : LibC::Float, config : NkFontConfig*) : NkFont*
+  # fun nk_font_atlas_add_compressed_base85(atlas : NkFontAtlas*, data : LibC::Char*, height : LibC::Float, config : NkFontConfig*) : NkFont*
+  # fun nk_font_atlas_bake(atlas : NkFontAtlas*, width : LibC::Int*, height : LibC::Int*, format : NkFontAtlasFormat) : Void*
+  # fun nk_font_atlas_end(atlas : NkFontAtlas*, tex : NkHandle, tex_null : NkDrawNullTexture*)
+  # fun nk_font_find_glyph(font : NkFont*, unicode : NkRune)
+  # fun nk_font_atlas_cleanup(atlas : NkFontAtlas*)
+  # fun nk_font_atlas_clear(atlas : NkFontAtlas*)
+
   # Memory buffer - 4174
   struct NkMemoryStatus
     memory : Void*
